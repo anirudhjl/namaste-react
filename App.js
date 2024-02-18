@@ -1,20 +1,23 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { resData } from "./src/data/data";
+import Header from "./src/components/Header";
+import Footer from "./src/components/Footer";
+import SearchBar from "./src/components/SearchBar";
+import CardContainer from "./src/components/CardContainer";
 
-// const heading1 = React.createElement('div', {}, 'I am heading') // returns JS object
+const AppLayout = () => {
+  return (
+    <div className="app">
+      <Header />
+      <SearchBar />
+      <div className="div-container">
+        {resData.map((data) => <CardContainer resData={data} key={data.info.resId} />)}
+      </div>
+      <Footer />
+    </div>
+  );
+};
 
-const heading2 = React.createElement('div', {},
-  React.createElement('div', { id: 'parent1' },
-    React.createElement('h1', { id: 'child1' }, 'I am Child 1'),
-    React.createElement('h2', { id: 'child2' }, 'I am Child too')
-  ),
-  React.createElement('div', { id: 'parent2' },
-    React.createElement('h1', { id: 'child1' }, 'I am Child 1'),
-    React.createElement('h2', { id: 'child2' }, 'I am Child too')
-  )
-)
-
-const HeadingComponent = () => <h1>I am different</h1>
-
-const root = ReactDOM.createRoot(document.getElementById('root'))
-root.render([heading2, <HeadingComponent />])
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<AppLayout />);
