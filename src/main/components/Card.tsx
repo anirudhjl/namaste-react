@@ -1,4 +1,4 @@
-const CardContainer = ({ resData }) => {
+const Card = ({ resData }) => {
   const { name, rating, image } = resData?.info;
   return (
     <div className="card-container">
@@ -10,4 +10,4 @@ const CardContainer = ({ resData }) => {
   );
 };
 
-export default CardContainer;
+export default Card;

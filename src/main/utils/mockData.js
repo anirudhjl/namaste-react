@@ -1,4 +1,4 @@
-export const resData = [
+export let resData = [
   {
     "type": "restaurant",
     "info": {
