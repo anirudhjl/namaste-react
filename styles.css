@@ -23,6 +23,10 @@
   list-style-type: none;
 }
 
+.nav-items > ul:hover {
+  cursor: pointer;
+}
+
 .nav-items > ul > li {
   padding: 15px;
   font-size: larger;
@@ -104,5 +108,19 @@ input:focus {
 }
 
 .clear-filter-btn:hover {
+  cursor: pointer;
+}
+
+.login-button {
+  border-radius: 5px;
+  border: none;
+  background-color: #db1503;
+  color: white;
+  width: 90px;
+  padding: 5px;
+  margin-top: -5px;
+}
+
+.login-button:hover {
   cursor: pointer;
 }

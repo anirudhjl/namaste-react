@@ -1,6 +1,9 @@
+import { useState } from "react";
 import logo from "../assets/HoolaLogo.png";
 
 const Header = () => {
+  const [btnName, updateBtnName] = useState("Login");
+
   return (
     <div className="header">
       <div className="logo-container">
@@ -12,6 +15,18 @@ const Header = () => {
           <li>About</li>
           <li>Support</li>
           <li>Cart</li>
+          <li>
+            <button
+              className="login-button"
+              onClick={() =>
+                btnName === "Login"
+                  ? updateBtnName("Logout")
+                  : updateBtnName("Login")
+              }
+            >
+              {btnName}
+            </button>
+          </li>
         </ul>
       </div>
     </div>
